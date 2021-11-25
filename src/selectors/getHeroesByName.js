@@ -4,6 +4,7 @@ const { heroes } = require("../data/heroes");
 
 export const getHeroesByName = ( name = '' ) => {
 
+    console.log( 'dentro de getheroesbyname' );
     if ( name.length === 0 ) {
         return [];
     }
