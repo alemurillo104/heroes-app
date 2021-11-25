@@ -15,10 +15,7 @@ export const HeroeList = ({ publisher }) => {
                     <HeroeCard 
                         key= { heroe.id }
                         {...heroe}
-                        // id={ heroe.id } 
-                        // superhero={ heroe.superhero } 
                     />
-                    // <li key={heroe.id} > { heroe.superhero } </li> 
                 ))
             } 
         </div>

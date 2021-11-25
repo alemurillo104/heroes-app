@@ -4,13 +4,9 @@ import { getHeroById } from '../../selectors/getHeroById';
 
 export const HeroScreen = () => {
 
-    const { heroeId } = useParams();
+    const { heroeId } = useParams(); //leer argumentos por URL
 
     const hero = useMemo(() => getHeroById(heroeId), [heroeId]);
-
-    // const hero = getHeroById( heroeId );
-    // const { superhero } = getHeroById( heroeId );
-    // console.log( superhero );
 
     const navigate = useNavigate();
     
