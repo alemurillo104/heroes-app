@@ -19,10 +19,7 @@ export const SearchScreen = () => {
 
     const { searchText } = formValues;
 
-    // const heroesFiltrados = getHeroesByName( q )    ;
     const heroesFiltrados = useMemo(() =>  getHeroesByName( q ), [ q ]);
-    // console.log( 'heroes filtrados : ', heroesFiltrados );
-    
 
     const handleSearch = (e) => {
         e.preventDefault();

@@ -1,9 +1,14 @@
-import React, { useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { AuthContext } from '../../auth/authContext';
 import { getHeroById } from '../../selectors/getHeroById';
 
 export const HeroScreen = () => {
+    
+    const datos = useContext(AuthContext);
+    console.log( datos, 'recuperando con el useContext' );
 
+    
     const { heroeId } = useParams(); //leer argumentos por URL
 
     const hero = useMemo(() => getHeroById(heroeId), [heroeId]);
