@@ -25,7 +25,7 @@ export const authReducer = ( state = {}, action ) => {
             return {
                 // name : action.payload.name, //la linea de abajo hace lo mismo con todos los atributos que le mande
                 ...action.payload,
-                logged: true
+                logged: true //se autenticó
             };
 
         case types.logout :

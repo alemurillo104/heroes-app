@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/authContext';
+import { types } from '../../types/types';
+
 
 export const LoginScreen = () => {
+
+    const { dispatch } = useContext(AuthContext);
 
     const navigate =useNavigate(); 
 
@@ -9,9 +14,23 @@ export const LoginScreen = () => {
 
         console.log('handlelogin');
 
-        navigate('/',{
+        const action = {
+            type: types.login,
+            payload: {
+                name: 'Aleeee'
+            }
+        }
+
+        dispatch( action );
+
+        const lastPath = localStorage.getItem('lastPath') || '/marvel';
+
+        navigate( lastPath ,{
             replace: true //reemplaze la vista o historia actual
         });
+        // navigate('/',{
+        //     replace: true //reemplaze la vista o historia actual
+        // });
     }
 
 

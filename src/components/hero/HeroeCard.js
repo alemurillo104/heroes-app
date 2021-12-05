@@ -34,7 +34,8 @@ export const HeroeCard = ({
                                 <small className="text-muted"> {first_appearance} </small>
                             </p>
 
-                            <Link to={`/hero/${id}`}>
+                            {/* //aqui llamo al HeroScreen con el hero id */}
+                            <Link to={`/hero/${id}`}> 
                                 Más...
                             </Link>
 
