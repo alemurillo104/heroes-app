@@ -3,6 +3,9 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../auth/authContext';
 import { getHeroById } from '../../selectors/getHeroById';
 
+import { heroImages } from '../../helpers/heroImages';
+// import batman from '../../assets/dc-batman.jpg'; //recurso estatico
+
 export const HeroScreen = () => {
     
     const datos = useContext(AuthContext);
@@ -32,14 +35,13 @@ export const HeroScreen = () => {
         publisher
     } = hero;
 
-    const imagePath = `/assets/${id}.jpg`;
-
-
     return (
         <div className="row mt-5">
             <div className="col-4">
                 <img 
-                    src={ imagePath }
+                    // src={ imagePath } //desde public assets
+                    // src={ batman } // import
+                    src={   heroImages(`./${ id }.jpg`).default }
                     alt={ superhero }
                     className="img-thumbnail animate__animated animate__fadeInLeft"
                 />

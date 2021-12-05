@@ -10,21 +10,11 @@ export const PrivateRoute = ({ children }) => {
 
     const { pathname, search} = useLocation();
 
-    // localStorage.setItem('lastPath', location.pathname );
-    
     localStorage.setItem('lastPath', pathname + search );
-
-    // if (location.pathname.includes('/search')) {
-    //     const nuevoPath = location.pathname + location.search;
-    // } else {
-
-    // }
 
     return user.logged 
     ? children
     : <Navigate to="/login" />
-    // : <p> No esta autenticado </p>
-
 }
 
 //npm audit fix
